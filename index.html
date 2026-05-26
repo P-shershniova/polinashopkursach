@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POLINA SHOP | E-COMMERCE WEBSITE</title>
+    <!-- favicon -->
+    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <!-- Font Lato -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/contact-modal.css">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- Slider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    
+    <style>
+        /* Additional slider styles */
+        #containerSlider {
+            margin: 30px auto;
+            width: 90%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        #containerSlider img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        @media(max-width: 732px) {
+            #containerSlider img { height: 220px; object-fit: cover; }
+        }
+        @media(max-width: 500px) {
+            #containerSlider img { height: 160px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER WITH NAVIGATION -->
+<header class="main-header">
+    <div class="header-container">
+        <button class="menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="shop-name">
+            <a href="index.html"><b>POLINA</b>SHOP</a>
+        </div>
+
+        <div class="search-container">
+            <span class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="#888">
+                    <path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Search for Clothing and Accessories">
+        </div>
+
+        <a href="cart.html" class="cart-link">
+            <span class="addedToCart">
+                <div id="badge">0</div>
+                <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333">
+                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+            </span>
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+            <button class="close-menu" id="closeMenuBtn" aria-label="Close menu">&times;</button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link" data-page="index">HOME</a></li>
+                <li><a href="content.html" class="nav-link" data-page="content">SHOP</a></li>
+                <li><a href="#" class="nav-link" id="contactLinkBtn">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
+<!-- CONTACT MODAL - карта только здесь -->
+<div id="contactModal" class="contact-modal">
+    <div class="contact-modal-content">
+        <button class="close-contact-modal" id="closeContactModalBtn">&times;</button>
+        <h2>Contact Us</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">ADDR</div>
+                    <div class="contact-details">
+                        <h4>ADDRESS</h4>
+                        <p>Minsk, st. Bobruiskaya 23<br>Republic of Belarus</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">TEL</div>
+                    <div class="contact-details">
+                        <h4>PHONE</h4>
+                        <p><a href="tel:+375291234567">+375 (29) 123-45-67</a></p>
+                        <p><a href="tel:+375331234567">+375 (33) 123-45-67</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">EMAIL</div>
+                    <div class="contact-details">
+                        <h4>EMAIL</h4>
+                        <p><a href="mailto:support@polinashop.com">support@polinashop.com</a></p>
+                        <p><a href="mailto:info@polinashop.com">info@polinashop.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">HOURS</div>
+                    <div class="contact-details">
+                        <h4>WORKING HOURS</h4>
+                        <p>Monday - Friday: 9:00 - 20:00</p>
+                        <p>Saturday: 10:00 - 18:00</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    src="https://yandex.ru/map-widget/v1/?ll=27.5598%2C53.9045&z=16&l=map&pt=27.5598,53.9045,pm2rdm" 
+                    allowfullscreen="true">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-content">
+    <!-- SLIDER -->
+    <section>
+        <div id="containerSlider">
+            <div><img src="img/img1.png" alt="Fashion Sale"></div>
+            <div><img src="img/img2.png" alt="Summer Collection"></div>
+            <div><img src="img/img3.png" alt="Winter Styles"></div>
+            <div><img src="img/img4.png" alt="Accessories"></div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <div id="mainContainer">
+        <h1>Clothing for Men and Women</h1>
+        <div id="containerClothing"></div>
+
+        <h1>Accessories for Men and Women</h1>
+        <div id="containerAccessories"></div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <section>
+        <div id="containerFooter">
+            <div id="webFooter">
+                <h3>online store</h3>
+                <p>men clothing</p>
+                <p>women clothing</p>
+                <p>men accessories</p>
+                <p>women accessories</p>
+            </div>
+            <div id="webFooter">
+                <h3>helpful link</h3>
+                <p>home</p>
+                <p>shop</p>
+                <p>contact</p>
+            </div>
+            <div id="webFooter">
+                <h3>partners</h3>
+                <p>zara</p>
+                <p>pantaloons</p>
+                <p>levis</p>
+                <p>ucb</p>
+                <p>+ many more</p>
+            </div>
+            <div id="webFooter">
+                <h3>address</h3>
+                <p>Minsk, st. Bobruiskaya 23</p>
+                <p>Republic of Belarus</p>
+            </div>
+        </div>
+        <div id="credit">
+            <a href="https://linkedin.com/in/priyanka-sharma-b79401142">© Priyanka Sharma</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 
+            <a href="https://www.edyoda.com/" target="_blank">EDYODA</a>
+        </div>
+    </section>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="js/cart-storage.js"></script>
+<script src="content.js"></script>
+
+<script>
+    // Navigation Menu
+    (function() {
+        const menuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        
+        function openMenu() {
+            if (navMenu) navMenu.classList.add('open');
+            if (mobileOverlay) mobileOverlay.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMenu() {
+            if (navMenu) navMenu.classList.remove('open');
+            if (mobileOverlay) mobileOverlay.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        
+        if (menuToggle) menuToggle.addEventListener('click', openMenu);
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', closeMenu);
+        
+        // Highlight active page
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && currentPage.includes(href.replace('./', ''))) {
+                link.classList.add('active');
+            }
+        });
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) closeMenu();
+        });
+        
+        // Contact Modal - карта открывается только при клике на CONTACT
+        const contactBtn = document.getElementById('contactLinkBtn');
+        const contactModal = document.getElementById('contactModal');
+        const closeContactBtn = document.getElementById('closeContactModalBtn');
+        
+        if (contactBtn) {
+            contactBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (contactModal) contactModal.classList.add('active');
+            });
+        }
+        
+        if (closeContactBtn) {
+            closeContactBtn.addEventListener('click', function() {
+                if (contactModal) contactModal.classList.remove('active');
+            });
+        }
+        
+        if (contactModal) {
+            contactModal.addEventListener('click', function(e) {
+                if (e.target === contactModal) {
+                    contactModal.classList.remove('active');
+                }
+            });
+        }
+        
+        // Search
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const query = searchInput.value.trim();
+                    if (query) alert('Searching for: ' + query);
+                    else alert('Please enter a search term.');
+                }
+            });
+        }
+    })();
+
+    // Slick Slider
+    $(document).ready(function() {
+        $('#containerSlider').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: true,
+            responsive: [
+                { breakpoint: 768, settings: { arrows: false, dots: true } }
+            ]
+        });
+    });
+</script>
+</body>
+</html>
